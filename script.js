@@ -1,14 +1,15 @@
 const paragraph = document.getElementById("savedName");
-const yourName = document.getElementById("nome");
+const yourName = document.getElementById("name");
 const saveBtn = document.getElementById("save");
 const deleteBtn = document.getElementById("delete");
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   saveBtn.addEventListener("click", event => {
     event.preventDefault();
     localStorage.setItem("name", yourName.value);
     paragraph.innerText = yourName.value;
   });
+
   deleteBtn.addEventListener("click", event => {
     event.preventDefault();
     localStorage.removeItem("name");
